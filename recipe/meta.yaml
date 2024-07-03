@@ -26,7 +26,7 @@ requirements:
     - pyarrow
     - scikit-learn
     - pytorch >=1.10.0
-    - tsdb >=0.4
+    - tsdb >=0.5
     - pygrinder >=0.6
 
 test:
