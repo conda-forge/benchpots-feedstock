@@ -1,5 +1,5 @@
 {% set name = "benchpots" %}
-{% set version = "0.1.1" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 12726b7db046ba0f3ca04a4be8b3a3075608e55fb666a85791d97d91d59a43d6
+  sha256: ba37623a6ee32289c33c8cc57d7947bf1138c597d5621b2a4959642e6c89755b
 
 build:
   noarch: python
@@ -19,6 +19,11 @@ requirements:
     - python >=3.8
     - pip
     - h5py
+    - scipy
+    - numpy
+    - pandas
+    - pyarrow
+    - scikit-learn
     - pytorch >=1.10.0
     - tsdb >=0.5
     - pygrinder >=0.6
@@ -30,6 +35,15 @@ test:
     - benchpots
   requires:
     - pip
+    - h5py
+    - scipy
+    - numpy
+    - pandas
+    - pyarrow
+    - scikit-learn
+    - pytorch >=1.10.0
+    - tsdb >=0.5
+    - pygrinder >=0.6
   commands:
     - pip check
 
