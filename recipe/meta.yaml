@@ -1,5 +1,5 @@
 {% set name = "benchpots" %}
-{% set version = "0.2" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,19 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ba37623a6ee32289c33c8cc57d7947bf1138c597d5621b2a4959642e6c89755b
+  sha256: d897de38584e4a343363bec2bba3ff4c5aead8719fffba70c2d8215dc60fc005
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
 
 requirements:
   host:
     - python >=3.8
     - pip
+  run:
+    - python >=3.8
     - h5py
     - scipy
     - numpy
@@ -25,27 +27,12 @@ requirements:
     - pyarrow
     - scikit-learn
     - pytorch >=1.10.0
-    - tsdb >=0.5
-    - pygrinder >=0.6
-  run:
-    - python >=3.8
+    - tsdb >=0.6.1
+    - pygrinder >=0.6.2
 
 test:
   imports:
     - benchpots
-  requires:
-    - pip
-    - h5py
-    - scipy
-    - numpy
-    - pandas
-    - pyarrow
-    - scikit-learn
-    - pytorch >=1.10.0
-    - tsdb >=0.5
-    - pygrinder >=0.6
-  commands:
-    - pip check
 
 about:
   home: https://github.com/WenjieDu/BenchPOTS
