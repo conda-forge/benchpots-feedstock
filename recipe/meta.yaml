@@ -1,5 +1,5 @@
 {% set name = "benchpots" %}
-{% set version = "0.2.2" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 376eea17b4b1a38cde7fd6fbbfd914edb24992cf2b290c76e463f82db9536cc9
+  sha256: a9bfc2558257e82576f587d88119c7a0cdc1cda04341a88d4e6b51358ca5706f
 
 build:
   noarch: python
