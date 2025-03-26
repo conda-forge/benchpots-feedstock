@@ -1,5 +1,5 @@
 {% set name = "benchpots" %}
-{% set version = "0.3.2" %}
+{% set version = "0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,18 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0b498acff9a63e03f78a3a066909a94023abe32a428bb45ec9b698c6a35d448b
+  sha256: 5b36a8fd7fd927e10599c156e435e8da8fd50224d1bb399a1015741bdfe0e50c
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
     - h5py
