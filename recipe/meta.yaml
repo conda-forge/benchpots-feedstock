@@ -30,6 +30,7 @@ requirements:
     - pytorch >=1.10.0
     - tsdb >=0.7.1
     - pygrinder >=0.7
+    - nonlinear_benchmarks >=1.0.1
 
 test:
   requires:
