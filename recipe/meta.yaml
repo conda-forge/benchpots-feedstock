@@ -1,18 +1,18 @@
 {% set name = "benchpots" %}
-{% set version = "0.4" %}
+{% set version = "0.5" %}
 
 package:
   name: {{ name|lower }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5b36a8fd7fd927e10599c156e435e8da8fd50224d1bb399a1015741bdfe0e50c
+  sha256: 8c18689b130288990571a44d62e70bc0cb9d7f2022038cb3f00795970a9e8d89
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -30,6 +30,7 @@ requirements:
     - pytorch >=1.10.0
     - tsdb >=0.7.1
     - pygrinder >=0.7
+    - nonlinear_benchmarks >=1.0.1
 
 test:
   requires:
